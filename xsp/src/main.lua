@@ -19,9 +19,7 @@ function main()
 	util.initMyHud()
 	--UI
 	local ret, results = showUI(json.encode(ui.configUI()))    --table转json
-	--缓存用户配置
---	_G["xiongGuiJiaoLian"] = tonumber(results["JiaoLianComboBox"])--兄贵教练
-
+	
 	--标记
 	_G["coinFinished"] = false
 	
@@ -52,7 +50,6 @@ function main()
 	until(_G["coinFinished"])
 	
 	--跳出主循环后
-	
 	if _G["coinFinished"] then
 		--任务结束提示
 		util.hudToast("任务已经执行完毕,待机中...")
